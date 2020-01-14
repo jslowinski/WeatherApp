@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/listPreferredItemHeightSmall"
+        android:background="@drawable/card_change_list_item"
+        android:textAppearance="?android:attr/textAppearanceListItem"
+        android:gravity="center_vertical"
+        android:textAlignment="center">
+</TextView>

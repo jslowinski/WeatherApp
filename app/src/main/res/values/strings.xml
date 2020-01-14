@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Stacja Pogodowa</string>
+    <string name="title_home">Aktualnie</string>
+    <string name="title_dashboard">Ostatnie 7 dni</string>
+    <string name="title_notifications">Wybierz dzień</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="c">°C</string>
+    <string name="n_a">N/A</string>
+    <string name="szczegoly">Szczegóły</string>
+    <string name="tempinside">Temperatura  wewnątrz</string>
+    <string name="pressure">Ciśnienie</string>
+    <string name="humidity">Wilogtność</string>
+    <string name="rain">Opady</string>
+    <string name="wind">Prędkość wiatru</string>
+    <string name="dewpoint">Punkt rosy</string>
+    <string name="chartdescription">Temperatura w ciągu dnia</string>
+</resources>

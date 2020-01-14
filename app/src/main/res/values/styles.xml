@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/startColor</item>
+        <item name="colorPrimaryDark">@color/startColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="colorPrimary">@color/startColor</item>
+        <item name="colorPrimaryDark">@color/startColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+        <item name="android:timePickerDialogTheme">@style/MyTimePickerDialogTheme</item>
+    </style>
+
+    <style name="HistoryTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/startColor</item>
+        <item name="colorPrimaryDark">@color/startColor</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/endColor</item>
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/startColor</item>
+        <item name="android:calendarTextColor">@color/endColor</item>
+    </style>
+
+    <style name="MyTimePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/endColor</item>
+        <item name="android:timePickerStyle">@style/MyTimePickerStyle</item>
+    </style>
+
+    <style name="MyTimePickerStyle" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:headerBackground">@color/startColor</item>
+    </style>
+
+
+
+</resources>

@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+        android:background="@drawable/gradient"
+             tools:context=".view.FragmentThree">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+            android:id="@+id/datepicker_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/endColor"
+            android:text="Wybierz Datę"
+            android:textColor="@color/startColor"
+            app:layout_constraintEnd_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/hourpicker_button"
+            android:enabled="false"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/endColor"
+            android:text="Wybierz Godzinę"
+            android:textColor="@color/startColor"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/datepicker_button"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/datepicker_button"
+            app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/firstday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hourpicker_button">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:foreground="@drawable/card_ripple"
+                android:padding="8dp">
+
+            <ImageView
+                    android:id="@+id/pickhouricon"
+                    android:src="@drawable/icons8_time_machine_100px"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="22dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="22dp"
+                    />
+
+            <TextView
+                    android:id="@+id/pickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brak danych"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0" />
+
+            <TextView
+                    android:id="@+id/picktempair"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/pickname"
+                    app:layout_constraintTop_toBottomOf="@+id/pickname" />
+
+            <TextView
+                    android:id="@+id/picktempinside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/picktempair" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/pickicons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/picktempinside">
+
+
+                <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="25dp"
+                        android:src="@drawable/icons8_umbrella_100px"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                        android:id="@+id/pickrain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="N/A"
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+                <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="25dp"
+                        android:src="@drawable/icons8_wind_100px"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                <TextView
+                        android:id="@+id/pickwind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="N/A"
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                        app:layout_constraintStart_toStartOf="@+id/imageView2"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+                <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/icons8_pressure_gauge_100px"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+                <TextView
+                        android:id="@+id/pickpressure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="N/A"
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+                        app:layout_constraintStart_toStartOf="@+id/imageView3"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+                <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/icons8_humidity_100px"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                        app:layout_constraintStart_toEndOf="@+id/imageView3"
+                        app:layout_constraintTop_toTopOf="@+id/imageView3"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                        android:id="@+id/pickhumidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="N/A"
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                        app:layout_constraintStart_toStartOf="@+id/imageView4"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/icons8_dew_point_100px"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                        app:layout_constraintStart_toEndOf="@+id/imageView4"
+                        app:layout_constraintTop_toTopOf="@+id/imageView3"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                        android:id="@+id/pickdewpoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="N/A"
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+                        app:layout_constraintStart_toStartOf="@+id/imageView5"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+            android:id="@+id/showanother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/endColor"
+            android:layout_marginTop="8dp"
+            android:text="Pokaż drugi dzień"
+            android:textColor="@color/startColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstday" />
+
+    <Button
+            android:id="@+id/datepicker_button2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/endColor"
+            android:visibility="gone"
+            android:text="Wybierz Datę"
+            android:textColor="@color/startColor"
+            app:layout_constraintEnd_toStartOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/showanother" />
+
+    <Button
+            android:id="@+id/hourpicker_button2"
+            android:layout_width="150dp"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/endColor"
+            android:text="Wybierz Godzinę"
+            android:textColor="@color/startColor"
+            android:enabled="false"
+            app:layout_constraintStart_toEndOf="@+id/datepicker_button2"
+            app:layout_constraintTop_toTopOf="@+id/datepicker_button2" />
+
+    <androidx.cardview.widget.CardView
+            android:visibility="gone"
+            android:id="@+id/anotherday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hourpicker_button2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:foreground="@drawable/card_ripple"
+                android:padding="8dp">
+
+            <ImageView
+                    android:id="@+id/pickhouricon2"
+                    android:src="@drawable/icons8_time_machine_100px"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="22dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="22dp"
+                    />
+
+            <TextView
+                    android:id="@+id/pickname2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brak danych"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0" />
+
+            <TextView
+                    android:id="@+id/picktempair2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/pickname2"
+                    app:layout_constraintTop_toBottomOf="@+id/pickname2" />
+
+            <TextView
+                    android:id="@+id/picktempinside2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/picktempair2" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/pickicons2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/picktempinside2">
+
+
+                <ImageView
+                        android:id="@+id/newimageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="25dp"
+                        android:src="@drawable/icons8_umbrella_100px"
+                        app:layout_constraintEnd_toStartOf="@+id/newimageView2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                        android:id="@+id/pickrain2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="TextView"
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/newimageView"
+                        app:layout_constraintStart_toStartOf="@+id/newimageView"
+                        app:layout_constraintTop_toBottomOf="@+id/newimageView" />
+
+                <ImageView
+                        android:id="@+id/newimageView2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="25dp"
+                        android:src="@drawable/icons8_wind_100px"
+                        app:layout_constraintBottom_toBottomOf="@+id/newimageView"
+                        app:layout_constraintEnd_toStartOf="@+id/newimageView3"
+                        app:layout_constraintTop_toTopOf="@+id/newimageView" />
+
+                <TextView
+                        android:id="@+id/pickwind2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="TextView"
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/newimageView2"
+                        app:layout_constraintStart_toStartOf="@+id/newimageView2"
+                        app:layout_constraintTop_toBottomOf="@+id/newimageView2" />
+
+                <ImageView
+                        android:id="@+id/newimageView3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/icons8_pressure_gauge_100px"
+                        app:layout_constraintBottom_toBottomOf="@+id/newimageView2"
+                        app:layout_constraintEnd_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/newimageView2" />
+
+                <TextView
+                        android:id="@+id/pickpressure2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="TextView"
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/newimageView3"
+                        app:layout_constraintStart_toStartOf="@+id/newimageView3"
+                        app:layout_constraintTop_toBottomOf="@+id/newimageView3" />
+
+                <ImageView
+                        android:id="@+id/newimageView4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/icons8_humidity_100px"
+                        app:layout_constraintBottom_toBottomOf="@+id/newimageView3"
+                        app:layout_constraintStart_toEndOf="@+id/newimageView3"
+                        app:layout_constraintTop_toTopOf="@+id/newimageView3"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                        android:id="@+id/pickhumidity2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="TextView"
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/newimageView4"
+                        app:layout_constraintStart_toStartOf="@+id/newimageView4"
+                        app:layout_constraintTop_toBottomOf="@+id/newimageView4" />
+
+                <ImageView
+                        android:id="@+id/newimageView5"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/icons8_dew_point_100px"
+                        app:layout_constraintBottom_toBottomOf="@+id/newimageView3"
+                        app:layout_constraintStart_toEndOf="@+id/newimageView4"
+                        app:layout_constraintTop_toTopOf="@+id/newimageView3"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                        android:id="@+id/pickdewpoint2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="TextView"
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/newimageView5"
+                        app:layout_constraintStart_toStartOf="@+id/newimageView5"
+                        app:layout_constraintTop_toBottomOf="@+id/newimageView5" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+            android:visibility="gone"
+            android:id="@+id/compare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/endColor"
+            android:layout_marginTop="8dp"
+            android:text="Porównaj"
+            android:textColor="@color/startColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/anotherday" />
+
+    <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/showanother" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
