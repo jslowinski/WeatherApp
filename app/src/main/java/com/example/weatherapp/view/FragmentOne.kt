@@ -44,12 +44,11 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class FragmentOne : Fragment() {
-    //    region Change City Values
+//    region Change City Values
     private lateinit var settingDialog: AlertDialog
-
     private var cityName = arrayListOf<String>()
     private var cityId = arrayListOf<Int>()
-    //endregion
+//endregion
 
 //    region Swipe
 
@@ -208,11 +207,12 @@ class FragmentOne : Fragment() {
         // Log the fact.
         Log.i(TAG, "Successfully loaded history.")
 
+
         owaCount = (totalCount - tempAirHistory.lastIndex) / 3
         label = 0
 
         Log.e(TAG, "Last index in history: ${tempAirHistory.lastIndex}")
-        Log.e(TAG, "From owa need to: $owaCount index")
+        Log.e(TAG, "From owa need up $owaCount index")
 
         for (i in 0..tempAirHistory.lastIndex) {
             if (i % 3 == 0) {
@@ -272,10 +272,8 @@ class FragmentOne : Fragment() {
     }
 
     private fun drawChart(entries: ArrayList<Entry>) {
-//Part3
-        val vl = LineDataSet(entries, "Temp")
 
-//Part4
+        val vl = LineDataSet(entries, "Temp")
         vl.setDrawValues(true)
         vl.setDrawFilled(false)
         vl.mode = LineDataSet.Mode.HORIZONTAL_BEZIER
@@ -288,20 +286,10 @@ class FragmentOne : Fragment() {
         vl.enableDashedLine(50f, 25f, 0f)
         vl.valueTextSize = 10f
         vl.valueTextColor = Color.WHITE
-        vl.fillColor = Color.GREEN
-        vl.fillAlpha = Color.RED
-
-//Part6
         linechart.data = LineData(vl)
-
-//Part7
         linechart.legend.isEnabled = false
-
-//Part8
         linechart.setTouchEnabled(false)
         linechart.setPinchZoom(false)
-
-//xAxis Formatter
         val xAxis = linechart.xAxis
         xAxis.setDrawLabels(true)
         xAxis.position = XAxis.XAxisPosition.BOTTOM
@@ -319,7 +307,6 @@ class FragmentOne : Fragment() {
                 "21:00",
                 "00:00"
             )
-
             override fun getAxisLabel(value: Float, axis: AxisBase?): String {
                 return hours.getOrNull(value.toInt()) ?: value.toString()
             }
@@ -327,22 +314,13 @@ class FragmentOne : Fragment() {
         xAxis.valueFormatter = MyXAxisFormatter()
         xAxis.textSize = 10f
         xAxis.textColor = Color.WHITE
-
-//yAxis Formatter
         val yAxisLeft = linechart.axisLeft
         val yAxisRight = linechart.axisRight
-
         yAxisLeft.setDrawLabels(false)
         yAxisRight.setDrawLabels(false)
-
-//Part9
         linechart.description.isEnabled = false
+        linechart.setNoDataTextColor(Color.WHITE)
         linechart.setNoDataText("Brak danych")
-
-//Part11
-//        val markerView = CustomMarker(this@ShowForexActivity, R.layout.marker_view)
-//        linechart.marker = markerView
-
         linechart.invalidate()
     }
 
@@ -500,7 +478,7 @@ class FragmentOne : Fragment() {
     }
     //endregion
 
-    //    region Change City
+//    region Change City
     private fun readJson() {
         val gson = Gson()
         val text = resources.openRawResource(R.raw.data)

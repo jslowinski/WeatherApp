@@ -1,14 +1,11 @@
 package com.example.weatherapp.manager
 
 import com.example.weatherapp.api.ApiClient
-import com.example.weatherapp.api.model.CurrentDto
 import com.example.weatherapp.database.AndroidDatabase
 import com.example.weatherapp.database.entity.CurrentEntity
 import com.example.weatherapp.database.entity.CurrentSummaryEntity
 import io.reactivex.Completable
 import io.reactivex.Maybe
-import io.reactivex.Scheduler
-import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import kotlin.math.ln
 
